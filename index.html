@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Flipz – Hold’em MVP</title>
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Hand evaluator (browser-ready) -->
+  <script defer src="https://cdn.jsdelivr.net/npm/pokersolver@2.1.4/pokersolver.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <header>
+    <h1>Flipz – Hold’em MVP</h1>
+    <p class="sub">Pick between two dealt hands. We’ll show estimated win odds.</p>
+  </header>
+
+  <main>
+    <section class="controls">
+      <button id="dealBtn">Generate new hands</button>
+      <span class="note">Monte Carlo: <span id="itersLabel">2,000</span> sims</span>
+    </section>
+
+    <section class="hands">
+      <div class="hand card">
+        <h2>Hand A</h2>
+        <div class="cards" id="handA"></div>
+        <div class="odds"><span id="oddsA">–</span> win%</div>
+      </div>
+
+      <div class="hand card">
+        <h2>Hand B</h2>
+        <div class="cards" id="handB"></div>
+        <div class="odds"><span id="oddsB">–</span> win%</div>
+      </div>
+    </section>
+
+    <section class="board card">
+      <h2>Runout (for display only)</h2>
+      <div class="cards" id="board"></div>
+      <p class="sm">Note: odds are estimated by simulating many random boards, not just this one.</p>
+    </section>
+  </main>
+
+  <footer>
+    <p>Built for the Flipz MVP. No backend. 👾</p>
+  </footer>
+</body>
+</html>
